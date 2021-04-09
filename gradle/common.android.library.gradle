@@ -1,0 +1,17 @@
+import com.turkurt656.buildsrc.BuildConstants
+import com.turkurt656.buildsrc.deps.AndroidxDeps
+import com.turkurt656.buildsrc.gradles.CommonGradles
+import com.turkurt656.buildsrc.Plugins
+
+apply plugin: Plugins.androidLibrary
+apply from: "$rootDir$CommonGradles.android"
+
+android {
+    defaultConfig {
+        consumerProguardFiles BuildConstants.consumerRules
+    }
+}
+
+dependencies {
+    implementation AndroidxDeps.coreKtx
+}

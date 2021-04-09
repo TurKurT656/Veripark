@@ -1,0 +1,15 @@
+import com.turkurt656.buildsrc.deps.CoroutinesDeps
+import com.turkurt656.buildsrc.deps.LifecycleDeps
+import com.turkurt656.buildsrc.gradles.CommonGradles
+
+apply from: "$rootDir$CommonGradles.androidLibrary"
+
+dependencies {
+    api LifecycleDeps.liveData
+    api LifecycleDeps.viewModel
+    api LifecycleDeps.commonJava8
+    api LifecycleDeps.liveEvent
+
+    implementation CoroutinesDeps.core
+    implementation CoroutinesDeps.android
+}

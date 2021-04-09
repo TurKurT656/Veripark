@@ -4,5 +4,6 @@ object CommonGradles {
 
     val kotlin = gradle("common.kotlin.gradle")
     val android = gradle("common.android.gradle")
+    val androidLibrary = gradle("common.android.library.gradle")
 
 }
