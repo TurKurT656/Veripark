@@ -1,12 +1,16 @@
+import com.turkurt656.buildsrc.Plugins
+import com.turkurt656.buildsrc.deps.GradleDeps
+
 buildscript {
-    ext.kotlin_version = "1.4.21"
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.1.2"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath GradleDeps.androidPlugin
+        classpath GradleDeps.kotlinPlugin
+        classpath GradleDeps.koinPlugin
+        classpath GradleDeps.safeArgsPlugin
     }
 }
 
@@ -20,3 +24,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+apply plugin: Plugins.koin
