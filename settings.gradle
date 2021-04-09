@@ -1,2 +1,3 @@
+include ':library:core'
 include ':app'
 rootProject.name = "Veripark"
