@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">@color/red_500</color>
+    <color name="color_primary_light">@color/red_300</color>
+    <color name="color_primary_dark">@color/red_700</color>
+    <color name="color_on_primary">@color/white</color>
+
+    <color name="color_secondary">@color/orange_500</color>
+    <color name="color_secondary_light">@color/orange_300</color>
+    <color name="color_secondary_dark">@color/orange_700</color>
+    <color name="color_on_secondary">@color/white</color>
+</resources>
