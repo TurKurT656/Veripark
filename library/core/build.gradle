@@ -1,0 +1,13 @@
+import com.turkurt656.buildsrc.deps.DataStoreDeps
+import com.turkurt656.buildsrc.gradles.CommonGradles
+import com.turkurt656.buildsrc.modules.LibraryModules
+
+apply from: "$rootDir$CommonGradles.kotlin"
+
+dependencies {
+    implementation DataStoreDeps.corePreferences
+}
+
+configurations.all {
+    exclude module: LibraryModules.Paths.core
+}

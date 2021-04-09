@@ -1,0 +1,24 @@
+import com.turkurt656.buildsrc.BuildConstants
+import com.turkurt656.buildsrc.Plugins
+import com.turkurt656.buildsrc.deps.KoinDeps
+import com.turkurt656.buildsrc.deps.KotlinDeps
+import com.turkurt656.buildsrc.modules.LibraryModules
+
+apply plugin: Plugins.javaLibrary
+apply plugin: Plugins.kotlin
+
+java {
+    sourceCompatibility = BuildConstants.jdkVersion
+    targetCompatibility = BuildConstants.jdkVersion
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = BuildConstants.jdkVersion
+}
+
+dependencies {
+    implementation KotlinDeps.kotlin
+    implementation KoinDeps.core
+
+    implementation project(LibraryModules.core)
+}
