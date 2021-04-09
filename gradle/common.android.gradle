@@ -1,0 +1,48 @@
+import com.turkurt656.buildsrc.BuildConstants
+import com.turkurt656.buildsrc.Plugins
+import com.turkurt656.buildsrc.deps.GradleDeps
+import com.turkurt656.buildsrc.deps.KoinDeps
+import com.turkurt656.buildsrc.deps.KotlinDeps
+import com.turkurt656.buildsrc.modules.LibraryModules
+
+apply plugin: Plugins.kotlinAndroid
+
+android {
+    compileSdkVersion BuildConstants.compileSdkVersion
+    buildToolsVersion GradleDeps.Versions.buildTools
+
+    defaultConfig {
+        minSdkVersion BuildConstants.minSdkVersion
+        targetSdkVersion BuildConstants.targetSdkVersion
+
+        vectorDrawables.useSupportLibrary true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile(BuildConstants.proguardAndroid), BuildConstants.proguardRules
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile(BuildConstants.proguardAndroid), BuildConstants.proguardRules
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility BuildConstants.jdkVersion
+        targetCompatibility BuildConstants.jdkVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = BuildConstants.jdkVersion.toString()
+    }
+}
+
+dependencies {
+    implementation KotlinDeps.kotlin
+    implementation KoinDeps.core
+    implementation KoinDeps.android
+
+    implementation project(LibraryModules.core)
+}
