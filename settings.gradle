@@ -1,4 +1,4 @@
-include ':library:core', ':library:lifecycle', ':library:designsystem'
+include ':library:core', ':library:lifecycle', ':library:designsystem', ':library:navigation'
 include ':common:core'
 include ':app'
 rootProject.name = "Veripark"

@@ -7,6 +7,7 @@ object LibraryModules {
 
         const val core = "core"
         const val lifecycle = "lifecycle"
+        const val navigation = "navigation"
         const val designSystem = "designsystem"
     }
 
@@ -14,6 +15,7 @@ object LibraryModules {
     // This is a pure kotlin module and all modules have dependency on this module
     val core = module(Paths.library, Paths.core)
     val lifecycle = module(Paths.library, Paths.lifecycle)
+    val navigation = module(Paths.library, Paths.navigation)
     // All customViews and ui components goes here
     val designSystem = module(Paths.library, Paths.designSystem)
 

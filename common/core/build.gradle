@@ -21,6 +21,8 @@ dependencies {
 
     implementation project(LibraryModules.lifecycle)
     implementation project(LibraryModules.designSystem)
+    implementation project(LibraryModules.navigation)
+
 }
 
 android.buildFeatures {

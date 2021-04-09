@@ -1,0 +1,11 @@
+import com.turkurt656.buildsrc.Plugins
+import com.turkurt656.buildsrc.deps.NavigationDeps
+import com.turkurt656.buildsrc.gradles.CommonGradles
+
+apply from: "$rootDir$CommonGradles.androidLibrary"
+apply plugin: Plugins.safeArgs
+
+dependencies {
+    api NavigationDeps.fragmentKtx
+    api NavigationDeps.uiKtx
+}
