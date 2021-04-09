@@ -22,6 +22,7 @@ dependencies {
     implementation project(LibraryModules.lifecycle)
     implementation project(LibraryModules.designSystem)
     implementation project(LibraryModules.navigation)
+    implementation project(LibraryModules.action)
 
 }
 
