@@ -1,0 +1,13 @@
+import com.turkurt656.buildsrc.deps.NetworkDeps
+import com.turkurt656.buildsrc.gradles.CommonGradles
+import com.turkurt656.buildsrc.modules.DataModules
+
+apply from: "$rootDir$CommonGradles.androidLibrary"
+
+dependencies {
+    implementation project(DataModules.local)
+    implementation project(DataModules.remote)
+    implementation project(DataModules.domain)
+
+    implementation NetworkDeps.okhttp3
+}
