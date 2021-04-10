@@ -5,6 +5,7 @@ import com.turkurt656.buildsrc.deps.AndroidxDeps
 import com.turkurt656.buildsrc.deps.UIDeps
 import com.turkurt656.buildsrc.gradles.CommonGradles
 import com.turkurt656.buildsrc.modules.LibraryModules
+import com.turkurt656.buildsrc.modules.DataModules
 import com.turkurt656.buildsrc.modules.CommonModules
 
 apply plugin: Plugins.androidApplication
@@ -41,6 +42,8 @@ dependencies {
     implementation UIDeps.material
 
     implementation project(LibraryModules.navigation)
+
+    implementation project(DataModules.remote)
 
     implementation project(CommonModules.core)
 }
