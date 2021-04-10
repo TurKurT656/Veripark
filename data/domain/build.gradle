@@ -1,0 +1,8 @@
+import com.turkurt656.buildsrc.deps.CoroutinesDeps
+import com.turkurt656.buildsrc.gradles.CommonGradles
+
+apply from: "$rootDir$CommonGradles.kotlin"
+
+dependencies {
+    api CoroutinesDeps.core
+}

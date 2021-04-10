@@ -3,6 +3,7 @@ import com.turkurt656.buildsrc.deps.AndroidxDeps
 import com.turkurt656.buildsrc.deps.KoinDeps
 import com.turkurt656.buildsrc.deps.UIDeps
 import com.turkurt656.buildsrc.gradles.CommonGradles
+import com.turkurt656.buildsrc.modules.DataModules
 import com.turkurt656.buildsrc.modules.LibraryModules
 
 apply from: "$rootDir$CommonGradles.androidLibrary"
@@ -23,6 +24,8 @@ dependencies {
     implementation project(LibraryModules.designSystem)
     implementation project(LibraryModules.navigation)
     implementation project(LibraryModules.action)
+
+    implementation(project(DataModules.domain))
 
 }
 
