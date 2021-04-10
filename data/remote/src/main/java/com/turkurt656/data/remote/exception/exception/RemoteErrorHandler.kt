@@ -1,5 +1,6 @@
 package com.turkurt656.data.remote.exception.exception
 
+import com.squareup.moshi.JsonDataException
 import com.turkurt656.data.remote.exception.exception.RemoteException.*
 import retrofit2.HttpException
 import java.io.IOException
@@ -28,6 +29,7 @@ fun handleRemoteError(e: Exception): RemoteException? =
         is ApiResponseException -> ApiException(e.message, e.code)
         is SocketTimeoutException -> NetworkException("Request timeout!")
         is IOException -> NetworkException("Unknown Network error")
+        is JsonDataException -> NetworkException(e.message.orEmpty())
         // Do not put another value in else branch,
         // It will cause to prevent local exceptions and... see: [handleError] function
         else -> null
