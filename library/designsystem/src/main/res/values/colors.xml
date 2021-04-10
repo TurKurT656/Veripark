@@ -9,4 +9,6 @@
     <color name="color_secondary_light">@color/orange_300</color>
     <color name="color_secondary_dark">@color/orange_700</color>
     <color name="color_on_secondary">@color/white</color>
+
+    <color name="ic_launcher_background">#FFFFFF</color>
 </resources>
