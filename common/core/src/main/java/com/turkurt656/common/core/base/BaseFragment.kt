@@ -53,7 +53,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
 
     override fun onStart() {
         super.onStart()
-        setStatusBarColor(R.color.white, false)
+        setStatusBarColor(R.color.color_primary, false)
         everyTimeEvent()
     }
 
