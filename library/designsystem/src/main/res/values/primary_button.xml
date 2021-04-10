@@ -26,6 +26,6 @@
     </style>
 
     <dimen name="primary_button_loading_width">2dp</dimen>
-    <dimen name="primary_button_loading_padding">14dp</dimen>
+    <dimen name="primary_button_loading_padding">8dp</dimen>
 
 </resources>
