@@ -2,6 +2,6 @@ include ':library:core', ':library:lifecycle', ':library:designsystem', ':librar
         ':library:action'
 include ':data:remote', ':data:local', ":data:domain", ':data:domainimpl'
 include ':common:core'
-include ':feature:splash'
+include ':feature:splash', ':feature:stocks'
 include ':app'
 rootProject.name = "Veripark"

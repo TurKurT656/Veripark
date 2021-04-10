@@ -2,4 +2,5 @@
 <resources>
     <item name="app_navigation" type="id" />
     <item name="splash_navigation" type="id" />
+    <item name="stocks_navigation" type="id" />
 </resources>

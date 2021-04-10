@@ -5,5 +5,6 @@
     android:id="@id/app_navigation">
 
     <include app:graph="@navigation/splash_navigation" />
+    <include app:graph="@navigation/stocks_navigation" />
 
 </navigation>
