@@ -1,6 +1,9 @@
 package com.turkurt656.veripark
 
+import com.turkurt656.data.domainimpl.di.repositoryModule
+import com.turkurt656.data.domainimpl.di.useCaseModule
 import com.turkurt656.data.local.di.dataStoreModule
+import com.turkurt656.data.remote.di.apiModule
 import com.turkurt656.data.remote.di.networkModule
 import com.turkurt656.feature.splash.di.splashModule
 import com.turkurt656.library.core.di.GlobalQualifiers.IS_DEBUG
@@ -17,7 +20,10 @@ val appModule = module {
 
 val koinModules = listOf(
     appModule,
+    repositoryModule,
+    useCaseModule,
     networkModule,
+    apiModule,
     dataStoreModule,
     splashModule,
 )

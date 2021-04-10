@@ -46,6 +46,7 @@ dependencies {
 
     implementation project(DataModules.remote)
     implementation project(DataModules.local)
+    implementation project(DataModules.domainImpl)
 
     implementation project(CommonModules.core)
 
