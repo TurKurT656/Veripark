@@ -10,5 +10,39 @@
     <color name="color_secondary_dark">@color/orange_700</color>
     <color name="color_on_secondary">@color/white</color>
 
-    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="ic_launcher_background">@color/white</color>
+
+    <color name="color_disabled_darker">@color/grey_58</color>
+    <color name="color_disabled_dark">@color/grey_95</color>
+    <color name="color_disabled_light">@color/grey_e1</color>
+
+    <color name="color_stroke_most_darkest">@color/black</color>
+    <color name="color_stroke_darker">@color/grey_58</color>
+    <color name="color_stroke_dark">@color/grey_95</color>
+    <color name="color_stroke_light">@color/grey_cc</color>
+    <color name="color_stroke_lighter">@color/grey_e1</color>
+
+    <color name="color_background_most_darkest">@color/black</color>
+    <color name="color_background_darker">@color/grey_58</color>
+    <color name="color_background_dark">@color/grey_95</color>
+    <color name="color_background_light">@color/grey_cc</color>
+    <color name="color_background_lighter">@color/grey_e1</color>
+    <color name="color_background_lightest">@color/grey_e5</color>
+    <color name="color_background_more_lightest">@color/grey_f2</color>
+    <color name="color_background_most_lightest">@color/white</color>
+
+    <color name="color_text_on_light_background">@color/black</color>
+    <color name="color_text_on_dark_background">@color/white</color>
+
+    <color name="color_text_on_light_bg_most_darkest">@color/black</color>
+    <color name="color_text_on_light_bg_darker">@color/grey_58</color>
+    <color name="color_text_on_light_bg_dark">@color/grey_95</color>
+    <color name="color_text_on_light_bg_light">@color/grey_cc</color>
+    <color name="color_text_on_light_bg_lighter">@color/grey_e1</color>
+
+    <color name="color_icon_on_light_bg_most_darkest">@color/black</color>
+    <color name="color_icon_on_light_bg_darker">@color/grey_58</color>
+    <color name="color_icon_on_light_bg_dark">@color/grey_95</color>
+    <color name="color_icon_on_light_bg_light">@color/grey_cc</color>
+    <color name="color_icon_on_light_bg_lighter">@color/grey_e1</color>
 </resources>

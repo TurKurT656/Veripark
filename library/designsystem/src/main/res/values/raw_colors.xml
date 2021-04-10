@@ -11,4 +11,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
+
+    <color name="grey_58">#FF585858</color>
+    <color name="grey_95">#FF959595</color>
+    <color name="grey_cc">#FFCCCCCC</color>
+    <color name="grey_e1">#FFE1E1E1</color>
+    <color name="grey_e5">#FFE5E5E5</color>
+    <color name="grey_f2">#FFF2F2F2</color>
 </resources>

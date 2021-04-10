@@ -9,5 +9,7 @@
         <item name="colorOnSecondary">@color/color_on_secondary</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
 
+        <!-- Custom Views -->
+        <item name="primaryButtonStyle">@style/PrimaryButton.Filled</item>
     </style>
 </resources>
