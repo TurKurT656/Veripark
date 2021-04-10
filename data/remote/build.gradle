@@ -1,0 +1,21 @@
+import com.turkurt656.buildsrc.Plugins
+import com.turkurt656.buildsrc.deps.CoroutinesDeps
+import com.turkurt656.buildsrc.deps.KoinDeps
+import com.turkurt656.buildsrc.deps.NetworkDeps
+import com.turkurt656.buildsrc.deps.SerializerDeps
+import com.turkurt656.buildsrc.gradles.CommonGradles
+
+apply from: "$rootDir$CommonGradles.kotlin"
+apply plugin: Plugins.kotlinKapt
+
+dependencies {
+    implementation NetworkDeps.retrofit
+    implementation NetworkDeps.okhttp3
+    implementation NetworkDeps.loggingInterceptor
+    implementation SerializerDeps.moshiConverter
+    implementation SerializerDeps.moshi
+    implementation SerializerDeps.moshiAdapters
+    kapt SerializerDeps.moshiCodeGen
+    implementation KoinDeps.core
+    implementation CoroutinesDeps.core
+}
