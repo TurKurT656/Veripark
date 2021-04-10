@@ -4,6 +4,7 @@ import com.turkurt656.buildsrc.deps.AndroidDeps
 import com.turkurt656.buildsrc.deps.AndroidxDeps
 import com.turkurt656.buildsrc.deps.UIDeps
 import com.turkurt656.buildsrc.gradles.CommonGradles
+import com.turkurt656.buildsrc.modules.FeatureModules
 import com.turkurt656.buildsrc.modules.LibraryModules
 import com.turkurt656.buildsrc.modules.DataModules
 import com.turkurt656.buildsrc.modules.CommonModules
@@ -47,4 +48,6 @@ dependencies {
     implementation project(DataModules.local)
 
     implementation project(CommonModules.core)
+
+    implementation project(FeatureModules.splash)
 }

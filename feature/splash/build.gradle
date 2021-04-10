@@ -1,0 +1,3 @@
+import com.turkurt656.buildsrc.gradles.CommonGradles
+
+apply from: "$rootDir$CommonGradles.feature"

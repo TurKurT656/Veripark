@@ -1,0 +1,34 @@
+import com.turkurt656.buildsrc.Plugins
+import com.turkurt656.buildsrc.deps.AndroidxDeps
+import com.turkurt656.buildsrc.deps.KoinDeps
+import com.turkurt656.buildsrc.deps.UIDeps
+import com.turkurt656.buildsrc.gradles.CommonGradles
+import com.turkurt656.buildsrc.modules.CommonModules
+import com.turkurt656.buildsrc.modules.DataModules
+import com.turkurt656.buildsrc.modules.LibraryModules
+
+apply from: "$rootDir$CommonGradles.androidLibrary"
+apply plugin: Plugins.safeArgs
+apply plugin: Plugins.kotlinKapt
+
+dependencies {
+    implementation AndroidxDeps.appCompat
+    implementation AndroidxDeps.constraintLayout
+    implementation AndroidxDeps.fragmentKtx
+    implementation UIDeps.material
+
+    implementation KoinDeps.androidxFragment
+    implementation KoinDeps.androidxScope
+    implementation KoinDeps.androidxViewModel
+
+    implementation project(CommonModules.core)
+    implementation project(LibraryModules.navigation)
+    implementation project(LibraryModules.action)
+    implementation project(LibraryModules.lifecycle)
+    implementation project(LibraryModules.designSystem)
+    implementation project(DataModules.domain)
+}
+
+android.buildFeatures {
+    dataBinding true
+}
