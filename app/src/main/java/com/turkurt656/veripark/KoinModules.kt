@@ -1,5 +1,6 @@
 package com.turkurt656.veripark
 
+import com.turkurt656.data.local.di.dataStoreModule
 import com.turkurt656.data.remote.di.networkModule
 import com.turkurt656.library.core.di.GlobalQualifiers.IS_DEBUG
 import org.koin.dsl.module
@@ -16,4 +17,5 @@ val appModule = module {
 val koinModules = listOf(
     appModule,
     networkModule,
+    dataStoreModule,
 )

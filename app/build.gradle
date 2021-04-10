@@ -44,6 +44,7 @@ dependencies {
     implementation project(LibraryModules.navigation)
 
     implementation project(DataModules.remote)
+    implementation project(DataModules.local)
 
     implementation project(CommonModules.core)
 }
