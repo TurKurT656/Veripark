@@ -83,7 +83,8 @@
             android:layout_height="24dp"
             android:layout_weight="1"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_arrow_up" />
+            android:src="@{item.isDown ? @drawable/ic_arrow_down : @drawable/ic_arrow_up}"
+            tools:src="@drawable/ic_arrow_up" />
 
     </LinearLayout>
 </layout>
