@@ -5,6 +5,7 @@ import com.turkurt656.data.remote.dto.ApiResponse
 import com.turkurt656.data.remote.exception.exception.ApiResponseException
 import okhttp3.Interceptor
 import okhttp3.Response
+import okhttp3.ResponseBody
 
 class ApiExceptionInterceptor(
     private val moshi: Moshi
@@ -17,12 +18,13 @@ class ApiExceptionInterceptor(
         if (response.header(CONTENT_TYPE)?.contains(APPLICATION_JSON) == false)
             return response
 
-        response.peekBody(2048)
-            .string()
-            .takeIf { it.isNotBlank() }
-            ?.handleApiExceptions(moshi)
+        val data = response.body()?.string().orEmpty()
 
-        return response
+        data.takeIf { it.isNotBlank() }?.handleApiExceptions(moshi)
+
+        val contentType = response.body()?.contentType()
+        val body = ResponseBody.create(contentType, data)
+        return response.newBuilder().body(body).build()
     }
 
     private fun String.handleApiExceptions(moshi: Moshi) {
