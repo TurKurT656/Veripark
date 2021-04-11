@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="search">Ara</string>
+    <string name="symbol">Sembol</string>
+    <string name="price">Fiyat</string>
+    <string name="difference">Fark</string>
+    <string name="volume">Hacim</string>
+    <string name="buy">Alış</string>
+    <string name="sell">Satış</string>
+    <string name="change">Değişim</string>
 </resources>
