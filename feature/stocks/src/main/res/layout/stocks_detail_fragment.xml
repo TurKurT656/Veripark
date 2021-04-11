@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="vm"
             type="com.turkurt656.feature.stocks.ui.detail.StocksDetailViewModel" />
@@ -23,15 +25,150 @@
             app:layout_constraintTop_toTopOf="parent"
             app:titleTextColor="@color/color_text_on_light_bg_lighter" />
 
+        <TextView
+            android:id="@+id/txtSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@{@string/symbol_format(vm.stocksDetail.symbol)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            tools:text="Sembol: HALKB" />
 
         <TextView
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@{`` + vm.id}"
+            android:id="@+id/txtPrice"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@{@string/price_format(vm.stocksDetail.bid)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtSymbol"
+            tools:text="Fiyat: 2.45" />
+
+        <TextView
+            android:id="@+id/txtDifference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@{@string/difference_format(vm.stocksDetail.difference)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPrice"
+            tools:text="Fark: 0.02%" />
+
+        <TextView
+            android:id="@+id/txtVolume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@{@string/volume_format(vm.stocksDetail.volume)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtDifference"
+            tools:text="Hacim: 580" />
+
+        <TextView
+            android:id="@+id/txtBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@{@string/buy_format(vm.stocksDetail.price)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtVolume"
+            tools:text="Alış: 0.51" />
+
+        <TextView
+            android:id="@+id/txtSell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@{@string/sell_format(vm.stocksDetail.offer)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtBuy"
+            tools:text="Satış: 0.54" />
+
+        <!-- =========================================== -->
+
+        <TextView
+            android:id="@+id/txtLowest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{@string/lowest_format(vm.stocksDetail.lowest)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            tools:text="Günlük Düşük: 2.7" />
+
+        <TextView
+            android:id="@+id/txtHighest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{@string/lowest_format(vm.stocksDetail.highest)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtLowest"
+            tools:text="Günlük Yüksek: 2.9" />
+
+        <TextView
+            android:id="@+id/txtCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{@string/count_format(vm.stocksDetail.count)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtHighest"
+            tools:text="Adet: 116" />
+
+        <TextView
+            android:id="@+id/txtMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{@string/max_format(vm.stocksDetail.maximum)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCount"
+            tools:text="Tavan: 2.50" />
+
+        <TextView
+            android:id="@+id/txtMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{@string/min_format(vm.stocksDetail.minimum)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtMax"
+            tools:text="Taban: 2.45" />
+
+        <ImageView
+            android:id="@+id/imgChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/change"
+            android:src="@{vm.stocksDetail.isDown ? @drawable/ic_arrow_down : @drawable/ic_arrow_up}"
+            app:layout_constraintBottom_toBottomOf="@id/txtChange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtChange"
+            tools:src="@drawable/ic_arrow_up" />
+
+        <TextView
+            android:id="@+id/txtChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/change"
+            app:layout_constraintEnd_toStartOf="@id/imgChange"
+            app:layout_constraintTop_toBottomOf="@id/txtMin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

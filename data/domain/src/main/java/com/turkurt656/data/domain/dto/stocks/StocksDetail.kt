@@ -5,7 +5,7 @@ data class StocksDetail(
     val isDown: Boolean,
     val bid: Double,
     val change: Double,
-    val count: Double,
+    val count: Long,
     val difference: Double,
     val offer: Double,
     val highest: Double,

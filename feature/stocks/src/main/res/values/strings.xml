@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="search">Ara</string>
+
     <string name="symbol">Sembol</string>
     <string name="price">Fiyat</string>
     <string name="difference">Fark</string>
@@ -8,13 +9,26 @@
     <string name="buy">Alış</string>
     <string name="sell">Satış</string>
     <string name="change">Değişim</string>
+
     <string name="all">Hepsi</string>
     <string name="increasing">Yükselenler</string>
-
-    <string name="drawer_open">Open navigation drawer</string>
-    <string name="drawer_close">Close navigation drawer</string>
     <string name="decreasing">Düşenler</string>
     <string name="volume30">Hacme göre - 30</string>
     <string name="volume50">Hacme göre - 50</string>
     <string name="volume100">Hacme göre - 100</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="symbol_format">Sembol: %s</string>
+    <string name="price_format">Fiyat: %.2f</string>
+    <string name="difference_format">Fark: %.2f%%</string>
+    <string name="volume_format">Hacim: %.2f</string>
+    <string name="buy_format">Alış: %.2f</string>
+    <string name="sell_format">Satış: %.2f</string>
+    <string name="lowest_format">Günlük Düşük: %.1f</string>
+    <string name="highest_format">Günlük Yüksek: %.1f</string>
+    <string name="count_format">Adet: %d</string>
+    <string name="max_format">Tavan: %.2f</string>
+    <string name="min_format">Taban: %.2f</string>
 </resources>

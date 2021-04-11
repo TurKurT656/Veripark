@@ -12,7 +12,7 @@ data class StocksDetailRemote(
     @field:Json(name = "channge")
     val change: Double,
     @field:Json(name = "count")
-    val count: Double,
+    val count: Long,
     @field:Json(name = "difference")
     val difference: Double,
     @field:Json(name = "offer")

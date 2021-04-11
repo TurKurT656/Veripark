@@ -37,6 +37,6 @@ class StocksRepositoryImpl(
         flowResult {
             val encryptedId = aesCryptoManager.encrypt(id.toString())
             stocksApi.getStocksDetail(StocksDetailRequestRemote(encryptedId))
-                .toDomain().apply { copy(symbol = aesCryptoManager.decrypt(symbol)) }
+                .toDomain().run { copy(symbol = aesCryptoManager.decrypt(symbol)) }
         }
 }
