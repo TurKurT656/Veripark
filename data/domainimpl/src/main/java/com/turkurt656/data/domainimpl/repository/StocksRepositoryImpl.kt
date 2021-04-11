@@ -23,6 +23,9 @@ class StocksRepositoryImpl(
         flowResult {
             val encryptedPeriod =
                 aesCryptoManager.encrypt(period.toString().toLowerCase(Locale.ENGLISH))
-            stocksApi.getStocksList(StocksListRequestRemote(encryptedPeriod)).toDomain()
+            stocksApi.getStocksList(StocksListRequestRemote(encryptedPeriod))
+                .toDomain().map {
+                    it.copy(symbol = aesCryptoManager.decrypt(it.symbol))
+                }
         }
 }
