@@ -38,4 +38,8 @@ class StocksListViewModel(
         )
     }
 
+    fun onStocksClicked(stocks: Stocks) {
+        navigateTo(StocksListFragmentDirections.toDetail(stocks.id))
+    }
+
 }

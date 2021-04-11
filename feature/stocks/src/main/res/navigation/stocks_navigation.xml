@@ -6,7 +6,24 @@
 
     <fragment
         android:id="@+id/stocks_list_fragment"
-        android:name="com.turkurt656.feature.stocks.ui.list.StocksListFragment" />
+        android:name="com.turkurt656.feature.stocks.ui.list.StocksListFragment">
+
+        <action
+            android:id="@+id/to_detail"
+            app:destination="@id/stocks_detail_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/stocks_detail_fragment"
+        android:name="com.turkurt656.feature.stocks.ui.detail.StocksDetailFragment">
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            app:nullable="false" />
+
+    </fragment>
 
 
 </navigation>

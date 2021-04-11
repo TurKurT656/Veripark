@@ -33,9 +33,16 @@ class StocksListFragment : BaseFragment<StocksListViewModel, StocksListFragmentB
     }
 
     override fun everyTimeEvent() {
-        binding?.rcvStocksList?.adapter = stocksAdapter
-        configDrawer()
         setSupportActionBar(binding?.toolbar)
+        configList()
+        configDrawer()
+    }
+
+    private fun configList() {
+        binding?.rcvStocksList?.adapter = stocksAdapter
+        stocksAdapter.onItemClicked = { item, _ ->
+            viewModel.onStocksClicked(item)
+        }
     }
 
     private fun configDrawer() {
