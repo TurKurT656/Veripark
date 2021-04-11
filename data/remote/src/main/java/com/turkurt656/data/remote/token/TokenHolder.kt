@@ -1,4 +1,4 @@
-package com.turkurt656.data.domain.token
+package com.turkurt656.data.remote.token
 
 interface TokenHolder {
 

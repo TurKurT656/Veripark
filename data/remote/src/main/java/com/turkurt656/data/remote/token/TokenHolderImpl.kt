@@ -1,6 +1,4 @@
-package com.turkurt656.data.domainimpl.token
-
-import com.turkurt656.data.domain.token.TokenHolder
+package com.turkurt656.data.remote.token
 
 class TokenHolderImpl: TokenHolder {
 

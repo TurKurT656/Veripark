@@ -3,8 +3,12 @@ package com.turkurt656.data.remote.di
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import com.turkurt656.data.remote.interceptor.ApiExceptionInterceptor
+import com.turkurt656.data.remote.interceptor.AuthorizationInterceptor
+import com.turkurt656.data.remote.token.TokenHolder
+import com.turkurt656.data.remote.token.TokenHolderImpl
 import com.turkurt656.library.core.di.GlobalQualifiers.IS_DEBUG
 import com.turkurt656.library.core.di.RemoteQualifiers.API_EXCEPTION_INTERCEPTOR
+import com.turkurt656.library.core.di.RemoteQualifiers.AUTHORIZATION_INTERCEPTOR
 import com.turkurt656.library.core.di.RemoteQualifiers.BASE_URL
 import com.turkurt656.library.core.di.RemoteQualifiers.CONNECTION_TIMEOUT
 import com.turkurt656.library.core.di.RemoteQualifiers.LOGGING_INTERCEPTOR
@@ -40,11 +44,16 @@ val networkModule = module {
         ApiExceptionInterceptor(get())
     }
 
+    factory<Interceptor>(AUTHORIZATION_INTERCEPTOR) {
+        AuthorizationInterceptor(get())
+    }
+
     single {
         OkHttpClient.Builder()
             .readTimeout(get(READ_TIMEOUT), TimeUnit.MILLISECONDS)
             .writeTimeout(get(WRITE_TIMEOUT), TimeUnit.MILLISECONDS)
             .connectTimeout(get(CONNECTION_TIMEOUT), TimeUnit.MILLISECONDS)
+            .addInterceptor(get(AUTHORIZATION_INTERCEPTOR))
             .addInterceptor(get(API_EXCEPTION_INTERCEPTOR))
             .addInterceptor(get(LOGGING_INTERCEPTOR))
             .build()
@@ -63,5 +72,7 @@ val networkModule = module {
             .addConverterFactory(MoshiConverterFactory.create(get()))
             .build()
     }
+
+    single<TokenHolder> { TokenHolderImpl() }
 
 }
