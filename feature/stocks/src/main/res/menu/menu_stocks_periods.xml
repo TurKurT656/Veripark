@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/period_all"
+            android:checked="true"
+            android:title="@string/all" />
+        <item
+            android:id="@+id/period_increasing"
+            android:title="@string/increasing" />
+        <item
+            android:id="@+id/period_decreasing"
+            android:title="@string/decreasing" />
+        <item
+            android:id="@+id/period_volume30"
+            android:title="@string/volume30" />
+        <item
+            android:id="@+id/period_volume50"
+            android:title="@string/volume50" />
+        <item
+            android:id="@+id/period_volume100"
+            android:title="@string/volume100" />
+    </group>
+</menu>

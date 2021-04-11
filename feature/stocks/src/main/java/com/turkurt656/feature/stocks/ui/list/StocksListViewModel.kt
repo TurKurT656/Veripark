@@ -28,12 +28,14 @@ class StocksListViewModel(
     }
 
     init {
-        launch {
-            getStocksListUseCase(Period.ALL).collectOnLiveData(
-                _stocksResult,
-                this@StocksListViewModel
-            )
-        }
+        getStocksList(Period.ALL)
+    }
+
+    fun getStocksList(period: Period) = launch {
+        getStocksListUseCase(period).collectOnLiveData(
+            _stocksResult,
+            this@StocksListViewModel
+        )
     }
 
 }
