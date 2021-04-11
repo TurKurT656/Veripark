@@ -4,6 +4,7 @@ import com.turkurt656.data.domain.result.ResultException
 import com.turkurt656.data.remote.exception.exception.handleRemoteError
 
 fun handleError(e: Exception): ResultException {
+    if (e is ResultException) return e
     handleRemoteError(e)?.let { return it.toResultException() }
     // handleLocalError here
     return ResultException.UnknownResultException("UnknownError")

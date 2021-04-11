@@ -10,6 +10,7 @@ sealed class ResultException(override val message: String): Exception() {
     data class NetworkException(override val message: String) : ResultException(message)
     data class UnknownNetworkException(override val message: String): ResultException(message)
     data class ApiException(override val message: String, val code: Int): ResultException(message)
+    data class CryptoException(override val message: String): ResultException(message)
 
 
     data class UnknownResultException(override val message: String): ResultException(message)

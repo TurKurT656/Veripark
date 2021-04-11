@@ -1,12 +1,13 @@
 package com.turkurt656.data.domainimpl.repository
 
 import android.os.Build
+import com.turkurt656.data.domain.crypto.AESCryptoManager
 import com.turkurt656.data.domain.dto.auth.HandShakeRequest
 import com.turkurt656.data.domain.dto.auth.HandShakeResponse
 import com.turkurt656.data.domain.dto.auth.Platform
 import com.turkurt656.data.domain.repository.AuthRepository
 import com.turkurt656.data.domain.result.FlowResult
-import com.turkurt656.data.domain.token.TokenHolder
+import com.turkurt656.data.remote.token.TokenHolder
 import com.turkurt656.data.domainimpl.mapping.auth.toDomain
 import com.turkurt656.data.domainimpl.mapping.auth.toRemote
 import com.turkurt656.data.domainimpl.result.flowResult
@@ -17,10 +18,8 @@ import java.util.*
 class AuthRepositoryImpl(
     private val authApi: AuthApi,
     private val tokenHolder: TokenHolder,
+    private val aesCryptoManager: AESCryptoManager,
 ) : AuthRepository {
-
-    private var aesKey: String = ""
-    private var aesIV: String = ""
 
     override fun handShake(): FlowResult<HandShakeResponse> =
         flowResult {
@@ -34,8 +33,7 @@ class AuthRepositoryImpl(
                 ).toRemote()
             ).toDomain().also {
                 tokenHolder.updateAuthorizationToken(it.authorization)
-                aesKey = it.aesKey
-                aesIV = it.aesIV
+                aesCryptoManager.updateKeys(it.aesKey, it.aesIV)
             }
         }
 
