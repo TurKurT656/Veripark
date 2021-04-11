@@ -22,6 +22,7 @@
             android:layout_margin="8dp"
             android:background="@drawable/search_box_bg"
             android:hint="@string/search"
+            android:text="@={vm.searchQuery}"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingTop="8dp"
@@ -50,7 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/incHeader"
-            bind:data="@{vm.stocksResult}"
+            bind:data="@{vm.stocksList}"
             tools:itemCount="30"
             tools:listitem="@layout/item_stocks" />
 
