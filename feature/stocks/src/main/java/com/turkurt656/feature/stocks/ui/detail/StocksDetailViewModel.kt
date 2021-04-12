@@ -1,5 +1,6 @@
 package com.turkurt656.feature.stocks.ui.detail
 
+import androidx.lifecycle.map
 import com.turkurt656.common.core.base.BaseViewModel
 import com.turkurt656.common.core.ktx.MutableLiveResult
 import com.turkurt656.common.core.ktx.collectOnLiveData
@@ -15,6 +16,14 @@ class StocksDetailViewModel(
 
     private val _stocksDetailResult = MutableLiveResult<StocksDetail>()
     val stocksDetail = _stocksDetailResult.mapData()
+
+    val graphicData = stocksDetail.map {
+        val map = mutableMapOf<Float, Float>()
+        it?.graphicData?.map { data ->
+            map[data.day.toFloat()] = data.value.toFloat()
+        }
+        return@map map.toMap()
+    }
 
     init {
         launch {

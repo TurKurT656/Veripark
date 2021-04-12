@@ -1,3 +1,8 @@
+import com.turkurt656.buildsrc.deps.UIDeps
 import com.turkurt656.buildsrc.gradles.CommonGradles
 
 apply from: "$rootDir$CommonGradles.feature"
+
+dependencies {
+    implementation UIDeps.chart
+}

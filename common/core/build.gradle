@@ -15,6 +15,7 @@ dependencies {
     implementation AndroidxDeps.constraintLayout
     implementation AndroidxDeps.fragmentKtx
     implementation UIDeps.material
+    implementation UIDeps.chart
 
     implementation KoinDeps.androidxFragment
     implementation KoinDeps.androidxScope

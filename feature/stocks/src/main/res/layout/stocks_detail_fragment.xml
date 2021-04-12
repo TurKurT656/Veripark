@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/bind"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -169,6 +170,19 @@
             android:text="@string/change"
             app:layout_constraintEnd_toStartOf="@id/imgChange"
             app:layout_constraintTop_toBottomOf="@id/txtMin" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lchStocksChart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtChange"
+            bind:dashedLine="@{true}"
+            bind:data="@{vm.graphicData}"
+            bind:fillDrawable="@{@drawable/fade_red}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
